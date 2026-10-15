@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MeTracker.Controls"
+             x:Class="MeTracker.Views.MainView"
+             Title="MainView">
+    <Grid>
+        <!-- Native Map Layer -->
+        <controls:HeatMap x:Name="UserHeatMap" />
+
+        <!-- Heat Map Route and Density Overlay -->
+        <GraphicsView x:Name="HeatMapCanvas"
+                      InputTransparent="True" />
+
+        <!-- Overlay Status Pill -->
+        <Frame HorizontalOptions="Center"
+               VerticalOptions="Start"
+               Margin="0,12,0,0"
+               Padding="14,6"
+               CornerRadius="14"
+               BackgroundColor="#F0FFFFFF"
+               BorderColor="#512BD4"
+               HasShadow="True">
+            <Label Text="● GPS Heat Map Trail (SQLite Active)"
+                   TextColor="#512BD4"
+                   FontAttributes="Bold"
+                   FontSize="12" />
+        </Frame>
+    </Grid>
+</ContentPage>
